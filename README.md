@@ -114,6 +114,12 @@ The handler using virtual threads outperforms the others.
 It achieves lower latency and higher throughput while using less
 overall CPU time for the same workload.
 
+* All frontend configurations achieve the target latency up to concurrent of 5,000
+* All frontend configurations are eventually CPU bound
+* Beyond concurrency 5,000, platform threads degrade quickly
+* Platform thread virtual memory increasing linearly with concurrency, due to stack memory
+* Platform thread consistency spends more CPU for the same amount of work
+
 Results were gathered from `ab` and `ps` output. The following `ps` command was
 used to gather metrics on the frontend web server EC2 instance:
 
