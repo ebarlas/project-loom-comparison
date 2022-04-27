@@ -214,7 +214,7 @@ ax22.grid()
 ax22.legend()
 
 for d in [type_thread, type_virtual, type_async]:
-    ax13.plot(x, d['rss'], label=d['label'])
+    ax13.plot(x, d['latency'], label=d['label'])
 ax13.set_xlabel('Connections')
 ax13.set_ylabel('Seconds')
 ax13.set_title('Latency')
